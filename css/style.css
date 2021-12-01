@@ -46,8 +46,24 @@ a:focus {
     border-color: #334480;
 }
 
+.btn-warning {
+    color: #FFFFFF;
+    background-color: #D79922;
+    border-color: #c1891e;
+}
+.btn-warning:hover,
+.btn-warning:focus {
+    color: #FFFFFF;
+    background-color: #c1891e;
+    border-color: #ac7a1b;
+}
+
 .navbar-light .navbar-brand {
-    color: rgba(14, 73, 29, 1.0);
+    color: #4056A1;
     font-size: 1.4rem;
     font-weight: bold;
+}
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-brand:focus {
+    color: #334480;
 }
