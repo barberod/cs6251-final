@@ -27,6 +27,21 @@ a:focus {
 .bg-success {
     background-color: rgba(14, 73, 29, 1.0) !important;
 }
+.bg-accent1 {
+    background-color: rgba(241, 31, 107, 1.0) !important;
+}
+.bg-accent2 {
+    background-color: rgba(29, 14, 73, 1.0) !important;
+}
+.bg-accent3 {
+    background-color: rgba(161, 64, 86, 1.0) !important;
+}
+.bg-accent4 {
+    background-color: rgba(26, 137, 111, 1.0) !important;
+}
+.bg-accent5 {
+    background-color: rgba(137, 111, 26, 1.0) !important;
+}
 
 .btn {
     border-radius: 0;
@@ -92,4 +107,18 @@ a:focus {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+.courses-banner {
+    background: url(/pics/shutterstock_128185265.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-top: -1.5rem;
+}
+
+.courses-badge {
+    font-family: sans-serif;
+    font-weight: normal;
 }
