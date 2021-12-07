@@ -101,7 +101,7 @@ a:focus {
     color: #334480;
 }
 
-.cover {
+.home-cover {
     background: url(/pics/shutterstock_132293006.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
