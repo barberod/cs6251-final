@@ -102,7 +102,15 @@ a:focus {
 }
 
 .home-cover {
-    background: url(/pics/shutterstock_132293006.jpg) no-repeat center center fixed; 
+    background: url(/pics/paint.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.instructors-cover {
+    background: url(/pics/stage-lights.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -110,7 +118,7 @@ a:focus {
 }
 
 .courses-banner {
-    background: url(/pics/shutterstock_128185265.jpg) no-repeat center center fixed; 
+    background: url(/pics/leaves.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
