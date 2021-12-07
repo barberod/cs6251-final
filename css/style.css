@@ -110,7 +110,7 @@ a:focus {
 }
 
 .instructors-cover {
-    background: url(/pics/stage-lights.jpg) no-repeat center center fixed; 
+    background: url(/pics/stage-lights.jpg) no-repeat right center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -129,4 +129,8 @@ a:focus {
 .courses-badge {
     font-family: sans-serif;
     font-weight: normal;
+}
+
+#v-pills-tab.nav-pills {
+    min-width: 200px;
 }
