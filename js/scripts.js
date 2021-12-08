@@ -109,7 +109,7 @@ function toggleElement(parentId, childId) {
 function calculateAndDisplayCosts() {
     let costArea = document.getElementById('cost-area');
 
-    if (!validFirstName() || !validLastName()) {
+    if (validFirstName() && validLastName()) {
         costArea.classList.remove("d-none");
         document.getElementById('total-cost').innerHTML = "$" + sumCourseCosts().toFixed(2);
         document.getElementById('attendee-full-name').innerHTML = getFullName();
@@ -148,7 +148,7 @@ function sumCourseCosts() {
  */
 function validFirstName() {
     let firstName = document.getElementById("firstName").value;
-    if (firstName != null && firstName != undefined) {
+    if (firstName.length > 0) {
         return true;
     } else {
         return false;
@@ -162,7 +162,7 @@ function validFirstName() {
  */
  function validLastName() {
     let lastName = document.getElementById("lastName").value;
-    if (lastName != null && lastName != undefined) {
+    if (lastName.length > 0) {
         return true;
     } else {
         return false;
