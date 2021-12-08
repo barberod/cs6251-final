@@ -108,14 +108,17 @@ function toggleElement(parentId, childId) {
  */
 function calculateAndDisplayCosts() {
     let costArea = document.getElementById('cost-area');
-    costArea.classList.remove("d-none");
 
-    document.getElementById('total-cost').innerHTML = "$" + sumCourseCosts().toFixed(2);
-    document.getElementById('attendee-full-name').innerHTML = getFullName();
-    document.getElementById('attendee-age-group').innerHTML = document.getElementById("ageGroup").value;
-    document.getElementById('attendee-discount').innerHTML = getDiscount();
-    document.getElementById('attendee-course-list').innerHTML = getSelectedCoursesAsUnorderedList();
-
+    if (!validFirstName() || !validLastName()) {
+        costArea.classList.remove("d-none");
+        document.getElementById('total-cost').innerHTML = "$" + sumCourseCosts().toFixed(2);
+        document.getElementById('attendee-full-name').innerHTML = getFullName();
+        document.getElementById('attendee-age-group').innerHTML = document.getElementById("ageGroup").value;
+        document.getElementById('attendee-discount').innerHTML = getDiscount();
+        document.getElementById('attendee-course-list').innerHTML = getSelectedCoursesAsUnorderedList();
+    } else {
+        costArea.classList.add("d-none");
+    }
 }
 
 /**
@@ -136,6 +139,34 @@ function sumCourseCosts() {
 
     total *= discount;
     return total;
+}
+
+/**
+ * Gets the value of the First Name input and checks its length
+ * 
+ * @returns (boolean) true if firstName value is valid
+ */
+function validFirstName() {
+    let firstName = document.getElementById("firstName").value;
+    if (firstName != null && firstName != undefined) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+/**
+ * Gets the value of the Last Name input and checks its length
+ * 
+ * @returns (boolean) true if lastName value is valid
+ */
+ function validLastName() {
+    let lastName = document.getElementById("lastName").value;
+    if (lastName != null && lastName != undefined) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 /**
