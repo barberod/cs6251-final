@@ -2,6 +2,7 @@
  * Script to process the submitted form data of the form in file
  * fees.html 
  */
+
 // JavaScript for disabling form submissions if there are invalid fields
 (function () {
     'use strict'
@@ -22,6 +23,12 @@
             }, false)
         })
 })()
+
+// event listener for DOM loaded
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById('ageGroup').innerHTML = getAgeGroupOptions();
+    document.getElementById('membershipLevel').innerHTML = getMembershipLevelOptions();
+});
 
 // event listeners on course checkboxes
 document.getElementById('course01').addEventListener('change', (event)=> {
@@ -48,7 +55,43 @@ document.getElementById('course09').addEventListener('change', (event)=> {
 // event listeners for button click
 document.getElementById('cost-button').addEventListener('click', calculateAndDisplayCosts);
 
-// JavaScript for toggling one element based on checkbox of another element
+/**
+ * Gets the Age Group selector options from an array
+ * 
+ * @returns (string) Age Group selector options
+ */
+function getAgeGroupOptions() {
+    const ageGroups = ["Adult", "Teen", "Kid"];
+
+    let options = '';
+    for (let i = 0; i < ageGroups.length; i++) {
+        options += '<option value="' + ageGroups[i] + '">' + ageGroups[i] + '</option>';
+    }
+
+    return options;
+}
+
+/**
+ * Gets the Membership Level selector options from an array
+ * 
+ * @returns (string) Membership Level selector options
+ */
+ function getMembershipLevelOptions() {
+    let membershipLevels = [];
+    membershipLevels[0] = "Non-Member (No Discount)";
+    membershipLevels[10] = "Bronze (10% Off)";
+    membershipLevels[25] = "Silver (25% Off)";
+    membershipLevels[50] = "Gold (50% Off)";
+
+    let options = '';
+    for (var key in membershipLevels) {
+        options += '<option value="' + key + '">' + membershipLevels[key] + '</option>';
+    }
+
+    return options;
+}
+
+// Toggles one element based on checkbox of another element
 function toggleElement(parentId, childId) {
     var child = document.getElementById(childId);
     if (document.getElementById(parentId).checked) {
@@ -71,7 +114,11 @@ function calculateAndDisplayCosts() {
 
     } else {
         costArea.classList.remove("d-none");
-        document.getElementById('total-cost').innerHTML = sumCourseCosts();
+        document.getElementById('total-cost').innerHTML = "$" + sumCourseCosts() + ".00";
+        document.getElementById('attendee-full-name').innerHTML = getFullName();
+        document.getElementById('attendee-age-group').innerHTML = document.getElementById("ageGroup").value;
+        document.getElementById('attendee-discount').innerHTML = document.getElementById("membershipLevel").value + "% Off";
+        document.getElementById('attendee-course-list').innerHTML = getSelectedCoursesAsUnorderedList();
     }
 
 }
@@ -94,7 +141,7 @@ function validateCourses() {
 /**
  * Sums the values of course checkboxes that are checked
  * 
- * @returns (number) the sum of the values of the checked checkboxes
+ * @returns (int) the sum of the values of the checked checkboxes
  */
 function sumCourseCosts() {
     let total = 0;
@@ -102,9 +149,38 @@ function sumCourseCosts() {
 
     for (let i = 0; i < checkboxes.length; i++) {
         if (checkboxes[i].checked) {
-            total += checkboxes[i].value;
+            total += parseInt(checkboxes[i].value);
         }
     }
 
     return total;
+}
+
+/**
+ * Gets the values of the Age Group input
+ * 
+ * @returns (string) the values of the Age Group input
+ */
+ function getFullName() {
+    let firstName = document.getElementById("firstName").value;
+    let lastName = document.getElementById("lastName").value;
+    return firstName + " " + lastName;
+}
+
+/**
+ * Gets the data attribute for each course checkbox that is
+ * checked and assembles an unordered list accordingly
+ * 
+ * @returns (string) an HTML unorderd list of courses
+ */
+function getSelectedCoursesAsUnorderedList() {
+    let checkboxes = document.getElementsByClassName("form-check-input");
+    let unorderedList = '<ul>';
+    for (let i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+            unorderedList += '<li>' + checkboxes[i].getAttribute("data") + '</li>';
+        }
+    }
+    unorderedList += '</ul>';
+    return unorderedList;
 }
