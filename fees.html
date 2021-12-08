@@ -56,154 +56,189 @@
     <main>
         <div class="container p-4">
             <div class="row g-3 mb-3">
-                <div class="col">
+                <div class="col-12 col-md-6 col-lg-8">
+
                     <div class="p-3 bg-dark text-white">
                         <h1 class="text-md-center">Fees</h1>
                         <p class="text-md-center mb-0">Lorem ipsum.</p>
                     </div>
-                </div>
-            </div>
-            <div class="row g-3 mb-3">
-                <div class="col">
+
                     <div class="p-3 bg-dark text-white">
-                        <h2>Select Courses</h2>
-                        <p class="mb-0">Lorem ipsum.</p>
-                        <table class="table">
-                            <tbody>
-                                <tr>
-                                    <td>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="course01">
-                                    </div>
-                                    </td>
-                                    <td>Learn Painting</td>
-                                    <td>$50</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="course01supplies">
-                                    </div>
-                                    </td>
-                                    <td>Supplies Kit for "Learn Painting"</td>
-                                    <td>$100</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="course02">
-                                    </div>
-                                    </td>
-                                    <td>Great Books Story Time</td>
-                                    <td>$0</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="course03">
-                                    </div>
-                                    </td>
-                                    <td>Sunday Speaker Series</td>
-                                    <td>$100</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="course04">
-                                    </div>
-                                    </td>
-                                    <td>Have Fun with Art</td>
-                                    <td>$50</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="course04supplies">
-                                    </div>
-                                    </td>
-                                    <td>Supplies Kit for "Have Fun with Art"</td>
-                                    <td>$100</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="course05">
-                                    </div>
-                                    </td>
-                                    <td>Learn Photography</td>
-                                    <td>$50</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="course05supplies">
-                                    </div>
-                                    </td>
-                                    <td>Supplies Kit for "Learn Photography"</td>
-                                    <td>$50</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="course06">
-                                    </div>
-                                    </td>
-                                    <td>Comedic Improv</td>
-                                    <td>$10</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="course07">
-                                    </div>
-                                    </td>
-                                    <td>Orchestra Rehearsal</td>
-                                    <td>$5</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="course08">
-                                    </div>
-                                    </td>
-                                    <td>3-D Printing for Everyone</td>
-                                    <td>$5</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="course08supplies">
-                                    </div>
-                                    </td>
-                                    <td>Supplies Kit for "3-D Printing for Everyone"</td>
-                                    <td>$75</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="course09">
-                                    </div>
-                                    </td>
-                                    <td>Maker Culture for Kids</td>
-                                    <td>$30</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="course09supplies">
-                                    </div>
-                                    </td>
-                                    <td>Supplies Kit for "Maker Culture for Kids"</td>
-                                    <td>$100</td>
-                                </tr>
-                            </tbody>
-                        </table>
+
+                        <form class="needs-validation" novalidate>
+
+                            <h2 class="text-warning">Select courses.</h2>
+                            <p class="mb-4">Lorem ipsum.</p>
+
+                            <table class="table table-dark text-white">
+                                <thead>
+                                    <tr>
+                                        <th width="10%" class="text-center">Select</th>
+                                        <th width="45%">Title</th>
+                                        <th width="30%">Audience</th>
+                                        <th width="15%">Cost</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input mx-auto" type="checkbox" value="50" id="course01">
+                                        </div>
+                                        </td>
+                                        <td>Learn Painting</td>
+                                        <td class="fst-italic">Adults, Teens</td>
+                                        <td>$50</td>
+                                    </tr>
+                                    <tr class="d-none" id="course01child">
+                                        <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input mx-auto" type="checkbox" value="100" id="course01supplies">
+                                        </div>
+                                        </td>
+                                        <td colspan="2" class="ps-sm-3 ps-md-5">Supplies Kit for "Learn Painting"</td>
+                                        <td>$100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input mx-auto" type="checkbox" value="0" id="course02">
+                                        </div>
+                                        </td>
+                                        <td>Great Books Story Time</td>
+                                        <td class="fst-italic">Kids</td>
+                                        <td>$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input mx-auto" type="checkbox" value="100" id="course03">
+                                        </div>
+                                        </td>
+                                        <td>Sunday Speaker Series</td>
+                                        <td class="fst-italic">Adults</td>
+                                        <td>$100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input mx-auto" type="checkbox" value="50" id="course04">
+                                        </div>
+                                        </td>
+                                        <td>Have Fun with Art</td>
+                                        <td class="fst-italic">Adults, Teens, Kids</td>
+                                        <td>$50</td>
+                                    </tr>
+                                    <tr class="d-none" id="course04child">
+                                        <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input mx-auto" type="checkbox" value="100" id="course04supplies">
+                                        </div>
+                                        </td>
+                                        <td colspan="2" class="ps-sm-3 ps-md-5">Supplies Kit for "Have Fun with Art"</td>
+                                        <td>$100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input mx-auto" type="checkbox" value="50" id="course05">
+                                        </div>
+                                        </td>
+                                        <td>Learn Photography</td>
+                                        <td class="fst-italic">Adults, Teens</td>
+                                        <td>$50</td>
+                                    </tr>
+                                    <tr class="d-none" id="course05child">
+                                        <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input mx-auto" type="checkbox" value="50" id="course05supplies">
+                                        </div>
+                                        </td>
+                                        <td colspan="2" class="ps-sm-3 ps-md-5">Supplies Kit for "Learn Photography"</td>
+                                        <td>$50</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input mx-auto" type="checkbox" value="10" id="course06">
+                                        </div>
+                                        </td>
+                                        <td>Comedic Improv</td>
+                                        <td class="fst-italic">Adults</td>
+                                        <td>$10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input mx-auto" type="checkbox" value="5" id="course07">
+                                        </div>
+                                        </td>
+                                        <td>Orchestra Rehearsal</td>
+                                        <td class="fst-italic">Adults</td>
+                                        <td>$5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input mx-auto" type="checkbox" value="5" id="course08">
+                                        </div>
+                                        </td>
+                                        <td>3-D Printing for Everyone</td>
+                                        <td class="fst-italic">Adults, Teens</td>
+                                        <td>$5</td>
+                                    </tr>
+                                    <tr class="d-none" id="course08child">
+                                        <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input mx-auto" type="checkbox" value="75" id="course08supplies">
+                                        </div>
+                                        </td>
+                                        <td colspan="2" class="ps-sm-3 ps-md-5">Supplies Kit for "3-D Printing for Everyone"</td>
+                                        <td>$75</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input mx-auto" type="checkbox" value="30" id="course09">
+                                        </div>
+                                        </td>
+                                        <td>Maker Culture for Kids</td>
+                                        <td class="fst-italic">Kids</td>
+                                        <td>$30</td>
+                                    </tr>
+                                    <tr class="d-none" id="course09child">
+                                        <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input mx-auto" type="checkbox" value="100" id="course09supplies">
+                                        </div>
+                                        </td>
+                                        <td colspan="2" class="ps-sm-3 ps-md-5">Supplies Kit for "Maker Culture for Kids"</td>
+                                        <td>$100</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="my-2 my-md-3 my-lg-5">
+                                <h2 class="text-warning">Identify the attendee.</h2>
+                                <p class="mb-0">Lorem ipsum.</p>
+                            </div>
+
+                            <div class="d-grid gap-2 my-2 my-md-3 my-lg-5">
+                                <button type="button" class="btn btn-primary btn-lg" id="cost-button" value="submit">Submit</button>
+                            </div>
+
+                        </form>
+
                     </div>
                 </div>
-                <div class="col">
-                    <div class="p-3 bg-dark text-white">
-                        <h2>Cost Calculator</h2>
-                        <p class="mb-0">Lorem ipsum.</p>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="p-3 bg-dark text-white d-none" id="cost-area">
+                        <h2 class="fs-1 text-md-center">Cost Estimate</h2>
+                        <p class="text-center mb-0">Lorem ipsum.</p>
+                        <p class="col-12 col-md-9 p-2 p-md-3 p-lg-5 my-2 my-md-3 my-lg-5 mx-auto bg-success text-center">
+                            Total:<br>
+                            <span class="fs-1" id="total-cost">$0.00</span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -224,6 +259,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+
+    <script src="js/scripts.js" type="text/javascript"></script>
 
 </body>
 
