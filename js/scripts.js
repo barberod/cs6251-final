@@ -108,34 +108,14 @@ function toggleElement(parentId, childId) {
  */
 function calculateAndDisplayCosts() {
     let costArea = document.getElementById('cost-area');
+    costArea.classList.remove("d-none");
 
-    if (!validateCourses()) {
-        costArea.classList.add("d-none");
+    document.getElementById('total-cost').innerHTML = "$" + sumCourseCosts().toFixed(2);
+    document.getElementById('attendee-full-name').innerHTML = getFullName();
+    document.getElementById('attendee-age-group').innerHTML = document.getElementById("ageGroup").value;
+    document.getElementById('attendee-discount').innerHTML = getDiscount();
+    document.getElementById('attendee-course-list').innerHTML = getSelectedCoursesAsUnorderedList();
 
-    } else {
-        costArea.classList.remove("d-none");
-        document.getElementById('total-cost').innerHTML = "$" + sumCourseCosts() + ".00";
-        document.getElementById('attendee-full-name').innerHTML = getFullName();
-        document.getElementById('attendee-age-group').innerHTML = document.getElementById("ageGroup").value;
-        document.getElementById('attendee-discount').innerHTML = document.getElementById("membershipLevel").value + "% Off";
-        document.getElementById('attendee-course-list').innerHTML = getSelectedCoursesAsUnorderedList();
-    }
-
-}
-
-/**
- * Checks if any course checkboxes are checked
- * 
- * @returns (boolean) true if any checkboxes are checked
- */
-function validateCourses() {
-    let checkboxes = document.getElementsByClassName("form-check-input");
-    for (let i = 0; i < checkboxes.length; i++) {
-        if (checkboxes[i].checked) {
-            return true;
-        }
-    }
-    return false;
 }
 
 /**
@@ -145,6 +125,7 @@ function validateCourses() {
  */
 function sumCourseCosts() {
     let total = 0;
+    let discount = 1 - (parseInt(document.getElementById("membershipLevel").value) / 100);
     let checkboxes = document.getElementsByClassName("form-check-input");
 
     for (let i = 0; i < checkboxes.length; i++) {
@@ -153,6 +134,7 @@ function sumCourseCosts() {
         }
     }
 
+    total *= discount;
     return total;
 }
 
@@ -165,6 +147,19 @@ function sumCourseCosts() {
     let firstName = document.getElementById("firstName").value;
     let lastName = document.getElementById("lastName").value;
     return firstName + " " + lastName;
+}
+
+/**
+ * Gets the value of the Membership Level input unless it is 0
+ * 
+ * @returns (string) the value of the Membership Level input unless it is 0
+ */
+ function getDiscount() {
+    if (parseInt(document.getElementById("membershipLevel").value) > 0) {
+        return "Discount " + document.getElementById("membershipLevel").value + "% Off"
+    } else {
+        return "No Discount";
+    }
 }
 
 /**

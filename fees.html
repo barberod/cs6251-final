@@ -60,15 +60,15 @@
 
                     <div class="p-3 bg-dark text-white">
                         <h1 class="text-md-center">Fees</h1>
-                        <p class="text-md-center mb-0">Lorem ipsum.</p>
+                        <p class="text-md-center mb-0">View the costs for courses and supplies.</p>
                     </div>
 
                     <div class="p-3 bg-dark text-white">
 
-                        <form class="needs-validation" novalidate>
+                        <form class="needs-validation"  onsubmit="event.preventDefault()" novalidate>
 
                             <h2 class="text-warning">Select courses.</h2>
-                            <p class="mb-4">Lorem ipsum.</p>
+                            <p class="mb-4">Select one or more courses.</p>
 
                             <table class="table table-dark text-white">
                                 <thead>
@@ -220,16 +220,22 @@
 
                             <div class="my-2 my-md-3 my-lg-5">
                                 <h2 class="text-warning">Identify the attendee.</h2>
-                                <p class="mb-5">Lorem ipsum.</p>
+                                <p class="mb-5">Required information is marked with an asterisk (*).</p>
 
                                 <div class="row">
                                     <div class="col mb-5">
-                                        <label for="firstName" class="form-label"><sup>*</sup>First Name</label>
-                                        <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First name">
+                                        <label for="firstName" class="form-label">* First Name</label>
+                                        <input type="text" class="form-control" name="firstName" id="firstName" required>
+                                        <div class="invalid-feedback">
+                                            Please enter your first name.
+                                        </div>
                                     </div>
                                     <div class="col mb-5">
-                                        <label for="lastName" class="form-label"><sup>*</sup>Last Name</label>
-                                        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last name">
+                                        <label for="lastName" class="form-label">* Last Name</label>
+                                        <input type="text" class="form-control" name="lastName" id="lastName" required>
+                                        <div class="invalid-feedback">
+                                            Please enter your first name.
+                                        </div>
                                     </div>
                                 </div>
 
@@ -251,7 +257,7 @@
                             </div>
 
                             <div class="d-grid gap-2 my-2 my-md-3 my-lg-5">
-                                <button type="button" class="btn btn-primary btn-lg" id="cost-button" value="submit">Submit</button>
+                                <button type="submit" class="btn btn-primary btn-lg" id="cost-button">Submit</button>
                             </div>
 
                         </form>
@@ -262,7 +268,7 @@
                     <div class="p-3 bg-dark text-white d-none" id="cost-area">
 
                         <h2 class="fs-1 text-md-center">Cost Estimate</h2>
-                        <p class="text-center mb-0">Lorem ipsum.</p>
+                        <p class="text-center mb-0">May be subject to change.</p>
                         <p class="col-12 col-md-9 p-3 my-3 my-lg-5 mx-auto bg-success text-center">
                             Total:<br>
                             <span class="fs-1" id="total-cost">$0.00</span>
@@ -271,15 +277,11 @@
                         <div class="row mb-3">
                             <div class="col mx-3">
                                 <h3 class="fs-2 text-warning">Attendee Info</h3>
-                                <p class="mb-3">
-                                    <span id="attendee-full-name"></span>
-                                </p>
-                                <p class="mb-3">
-                                    <span id="attendee-age-group"></span>
-                                </p>
-                                <p class="mb-3">
-                                    <span id="attendee-discount"></span>
-                                </p>
+                                <ul>
+                                    <li id="attendee-full-name"></li>
+                                    <li id="attendee-age-group"></li>
+                                    <li id="attendee-discount"></li>
+                                </ul>
                             </div>
                         </div>
 
@@ -301,9 +303,8 @@
             <p class="float-end mb-1">
                 <a href="#">Back to top</a>
             </p>
-            <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-            <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a
-                    href="../getting-started/introduction/">getting started guide</a>.</p>
+            <p class="mb-1">Copyright &copy; 2021 David Barbero <a href="mailto:db00300@my.westga.edu">db00300@my.westga.edu</a></p>
+            <p class="mb-0">Fall 2021 / Final Project / CS 6251 / University of West Georgia</p>
         </div>
     </footer>
 
